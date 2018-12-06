@@ -1,9 +1,4 @@
 # BudGet
-budget control app 
-live preview: 
-
-
-# BudGet
 Budget Control App
 Technologies used:
 HTML5,
