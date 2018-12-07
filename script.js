@@ -1,3 +1,5 @@
+/////////////////////////// BUDGET MODULE
+
 var budgetController = (function () {
     var Expense = function (id, description, value) {
         this.id = id;
@@ -29,13 +31,9 @@ var budgetController = (function () {
             inc: 0
         },
         budget: 0,
-
     }
 
     return {
-        testing: function () {
-            console.log(data.allItems);
-        },
         addItem: function (type, des, val) {
             var newItem, ID;
             if (data.allItems[type].length > 0) {
@@ -45,14 +43,13 @@ var budgetController = (function () {
             }
             if (type === 'exp') {
                 newItem = new Expense(ID, des, val);
-            } else if (type === 'inc') {
+            } else {
                 newItem = new Income(ID, des, val);
             }
             data.allItems[type].push(newItem);
             return newItem;
         },
         deleteItem: function (type,id) {
-            console.log(type," ",id)
             var ids, index;
             ids = data.allItems[type].map(function (current) {
                 return current.id;
@@ -87,7 +84,7 @@ var Expense = function (id, description, value) {
     this.value = value;
 };
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// UI MODULE
 
 var UIController = (function () {
 
@@ -102,8 +99,6 @@ var UIController = (function () {
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
         container: '.container',
-        incomeList:'.income__list',
-        expensesList:'.expenses__list'
     };
 
     return {
@@ -164,7 +159,7 @@ var UIController = (function () {
     };
 })();
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// CONTROLLER MODULE
 
 var controller = (function (budgetCtrl, UICtrl) {
 
@@ -219,9 +214,6 @@ var controller = (function (budgetCtrl, UICtrl) {
                 totalInc = 0,
                 totalExp = 0,
                 percentage = 0);
-        },
-        displayData:function(){
-            budgetCtrl.testing();
         }
     };
 
