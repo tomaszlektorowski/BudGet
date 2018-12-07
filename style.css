@@ -156,12 +156,20 @@ body {
     font-size: 35px;
     background: none;
     border: none;
-    color: #28B9B5;
+    color: rgb(40, 185, 47);
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
     line-height: 1.1;
     margin-left: 10px;
+    transform: scale(1.0);
+    transition-duration: 500ms;
+}
+
+.add__btn:hover{
+    color: rgb(0, 255, 0);
+    transform: scale(1.1);
+    transition-duration: 500ms;
 }
 
 .add__btn:active { transform: translateY(2px); }
@@ -247,17 +255,12 @@ h2 {
     float: left;
 }
 
-.item__delete--btn {
-    font-size: 22px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    display: none;
-}
 
+.item__delete--btn:hover{
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    color:red;
+}
 .item__delete--btn:focus { outline: none; }
 .item__delete--btn:active { transform: translateY(2px); }
 
@@ -267,7 +270,7 @@ h2 {
 
 
 .unpaid {
-    background-color: #FFDAD9 !important;
+    background-color: #FFDAD9;
     cursor: pointer;
     color: #FF5049;
 
@@ -275,4 +278,19 @@ h2 {
 
 .unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
+
+.item__delete--btn {
+
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    transform: scale(1.0);
+    transition-duration: 500ms;
+    color: #FF5049;
+}
 
